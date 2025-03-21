@@ -1,7 +1,7 @@
 const { Transform } = require('node:stream');
 const fs = require('node:fs');
 
-const readFile = fs.createReadStream('pg75369.txt', {encoding: 'utf8', highWaterMark});
+const readFile = fs.createReadStream('pg75369.txt', {encoding: 'utf8', highWaterMark: 16384});
 const writeFile = fs.createWriteStream('new-file.txt');
 
 const myTransform = new Transform({
